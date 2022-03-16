@@ -1,9 +1,17 @@
 # This program detects all the song from the Music folder and write into the Music.txt file
 
 import subprocess as sp
+import os
 
 
 def load_songs():
+    # If there is no Text Files exist then create it
+    str = sp.getoutput("dir")
+    if str.count("Text Files") != 0:
+        pass
+    else:
+        os.system("mkdir \"Text Files\"")
+
     # creating the temp file to store the output of the cmd
     output = sp.getoutput("dir Music\\")
     f = open("Text Files/Temp.txt", "w")
