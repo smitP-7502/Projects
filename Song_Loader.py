@@ -34,3 +34,5 @@ def load_songs():
 
     F.close()
     File.close()
+
+load_songs()
