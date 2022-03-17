@@ -3,8 +3,8 @@ def Show_song():
     print("----------------------: Song List :----------------------")
     for line in f:
         print(line, end="")
-    f.close()
     print("---------------------------------------------------------")
+    f.close()
 
 
 def Playlist():

@@ -1,5 +1,6 @@
 from Make_Playlist import Playlist
 
+
 def Search_Play():
     i = 0
     List = []
@@ -10,10 +11,12 @@ def Search_Play():
         temp = Search.capitalize()
 
         f = open("Text Files/Music.txt")
+        print("----------------------------: Song Found :----------------------------")
         for line in f:
             if ((line.split())[1].capitalize()).removesuffix("\n").__contains__(temp):
-                    print(line,end="")
-                    c += 1
+                print(line, end="")
+                c += 1
+        print("----------------------------------------------------------------------")
         f.close()
         if c != 0:
             List = Playlist()
@@ -29,6 +32,4 @@ def Search_Play():
 
     return List
 
-
 # Search_Play()
-
