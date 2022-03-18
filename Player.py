@@ -1,13 +1,20 @@
 # This take the list and play the song
+import time
 
 from pygame import mixer
 from shuffle import Shuffle
+import keyboard
 
 
 def Music_Player(List):
     # List = ["Blinding_lights.mp3","Beggin.mp3","Life_goes_on.mp3"]
     Mainlist = List
     Dublicate = []
+    P = input("Use this player using prompt(y/n): ")
+    if P == "n":
+        Prompt = 0
+    else:
+        Prompt = 1
 
     print("\n\n--------------------------: Functions :--------------------------")
     print(
@@ -19,6 +26,7 @@ def Music_Player(List):
     i = 0
     c = 0
     cout = 0
+    G = "g"
     mixer.init()
     while i != LengthOfList:
         global volume
@@ -27,7 +35,7 @@ def Music_Player(List):
 
         if c == 0:
             c += 1
-            volume = 0.3
+            volume = 0.1
         else:
             if List[i] in Played:
                 pass
@@ -37,30 +45,44 @@ def Music_Player(List):
         # print(i,List,"\n\n")
 
         mixer.music.load("Music/" + List[i])
+        # print("Load song")
         print("\nPlaying " + List[i].removesuffix(".mp3") + ".....")
         mixer.music.set_volume(volume)
         mixer.music.play()
 
         while True:
-            button = input()
+            if Prompt == 1:
+                button = input()
+            else:
+                button = keyboard.read_key()
+                time.sleep(0.2)
+                # print(button)
+                if button not in ["P","Q","G"]:
+                    continue
+                else:
+                    if button == "G":
+                        if G == "G":
+                            G = "g"
+                        elif G == "g":
+                            G = "G"
 
-            if button == "next":
+            if button == "next" or button == "P":
                 # print("Next")
                 mixer.music.stop()
                 mixer.music.unload()
                 i += 1
                 break
-            elif button == "previous":
+            elif button == "previous" or button == "Q":
                 # print("Previous")
                 mixer.music.stop()
                 mixer.music.unload()
                 i -= 1
                 break
-            elif button == "pause":
+            elif button == "pause" or G == "G":
                 print("Song is paused")
                 mixer.music.pause()
                 # mixer.music.get_busy()
-            elif button == "unpause":
+            elif button == "unpause" or G == "g":
                 # print("unpause")
                 mixer.music.unpause()
             elif button.isnumeric():
