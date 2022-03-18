@@ -5,7 +5,7 @@ This is project of offline music player as my first python and git repo.
 As per fresher there are many ideas to create project, but in daily life i would like to play song when i am code or doing the other stuff.
 
 # Build of the project
-I devided whole prlject in the problems and make the modules.
+I devided whole project in the problems and make the modules.
 
 *1) Main.py*
 
