@@ -16,7 +16,7 @@ def Search_Play():
             if ((line.split())[1].capitalize()).removesuffix("\n").__contains__(temp):
                 print(line, end="")
                 c += 1
-        print("----------------------------------------------------------------------")
+        print("------------------------------------------  ----------------------------")
         f.close()
         if c != 0:
             List = Playlist()

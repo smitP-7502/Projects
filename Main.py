@@ -1,7 +1,7 @@
 import time
 import Make_Playlist
 import shuffle
-from Random_play import Play_suf
+from Play_all import Play_suf
 from Song_Loader import load_songs
 from Player import Music_Player
 from Search import Search_Play

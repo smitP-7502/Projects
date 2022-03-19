@@ -56,7 +56,14 @@ def Music_Player(List):
             else:
                 button = keyboard.read_key()
                 time.sleep(0.2)
-                # print(button)
+                if button == "f2":
+                    print("Volume decreased")
+                    volume -= 0.1
+                    mixer.music.set_volume(volume)
+                elif str(button) == "f3":
+                    volume += 0.1
+                    print("Volume increased")
+                    mixer.music.set_volume(volume)
                 if button not in ["P","Q","G"]:
                     continue
                 else:
@@ -115,9 +122,9 @@ def Music_Player(List):
                     else:
                         print(j)
                 print("------------------------------------------------------------------")
-
             else:
                 print("Invalid Entry.........")
 
 
-# Music_Player()
+
+# Music_Player(["Blinding_lights.mp3","Life_goes_on.mp3"])
