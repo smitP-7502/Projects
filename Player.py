@@ -1,4 +1,5 @@
 # This take the list and play the song
+import os
 
 from pygame import mixer
 from shuffle import Shuffle
@@ -11,7 +12,7 @@ def Music_Player(List):
 
     print("\n\n--------------------------: Functions :--------------------------")
     print(
-        "name: show song name\npause: pause music\nunpause : unpause music\nnext: next music\nprevious : previous music\nshuffle on or off: enable or disable shuffle\nEnter 1 to 10: volume of music\nqueue: showing the song queue")
+        "name: show song name\npause: pause music\nunpause : unpause music\nnext: next music\nprevious : previous music\nshuffle on or off: enable or disable shuffle\nEnter 1 to 10: volume of music\nqueue: showing the song queue\nexit: exit from the entire playlist\ncls: clear the screen\nfunctions: show all the functions")
     print("-----------------------------------------------------------------")
 
     LengthOfList = len(List)
@@ -70,10 +71,13 @@ def Music_Player(List):
                 print(f"Volume set to {button}")
             elif button == "exit":
                 print("Exit from the player")
+                i = len(List)
+                mixer.music.stop()
+                mixer.music.unload()
                 break
             elif button == "name":
                 print("Playing " + List[i].removesuffix(".mp3") + ".....")
-            elif button.startswith("shuffle"):
+            elif button.startswith("shuffle") and (button.endswith("on") or button.endswith("off")):
                 if button.split(" ")[1] == "on":
                     print("Shuffle is enabled")
                     if cout == 0:
@@ -93,9 +97,19 @@ def Music_Player(List):
                     else:
                         print(j)
                 print("------------------------------------------------------------------")
-
+            elif button == "functions":
+                print("\n\n--------------------------: Functions :--------------------------")
+                print(
+                    "name: show song name\npause: pause music\nunpause : unpause music\nnext: next music\nprevious : previous music\nshuffle on or off: enable or disable shuffle\nEnter 1 to 10: volume of music\nqueue: showing the song queue\nexit: exit from the entire playlist\ncls: clear the screen\nfunctions: show all the functions")
+                print("-----------------------------------------------------------------")
+            elif button == "cls":
+                os.system("cls")
+                print("\n\n--------------------------: Functions :--------------------------")
+                print(
+                    "name: show song name\npause: pause music\nunpause : unpause music\nnext: next music\nprevious : previous music\nshuffle on or off: enable or disable shuffle\nEnter 1 to 10: volume of music\nqueue: showing the song queue\nexit: exit from the entire playlist\ncls: clear the screen\nfunctions: show all the functions")
+                print("-----------------------------------------------------------------")
             else:
                 print("Invalid Entry.........")
 
 
-# Music_Player()
+# Music_Player(["Blinding_lights.mp3","Levitating.mp3","Stay.mp3","Thunder.mp3"])
