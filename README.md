@@ -1,8 +1,11 @@
-# Projects
-This is project of offline music player as my first python and git repo. 
+# Project
+This is CLI based Offline Music Palyer Devloped in PYthon.
 
-# Perspective
-As per fresher there are many ideas to create project, but in daily life i would like to play song when i am code or doing the other stuff.
+# How to run it
+First you have to clone or Download the this repo and then simply put all your offline songs in the **Music** Folder which is attach with this repo.
+Before running this programme your system must have python interpeter installed in it[Donwload From Here](https://www.python.org/downloads/).
+Then open CMD and write ***pip install pygame*** (You can also install mannualy). 
+After Installation You have to run(click) **Main.py** file and Enjoy your songs.
 
 # Build of the project
 I devided whole project in the problems and make the modules.
@@ -27,7 +30,7 @@ This file is in in the **Player.py** to make search and play function.
 
 *5) Play_all.py*
 
-This file use for the function in the **Main.py** to play all the avialable sont.
+This file use for the function in the **Main.py** to play all the avialable songs.
 
 *6) shuffle.py*
 
@@ -36,9 +39,3 @@ This file is playe the song in shuffle mode which is in **Player.py**.
 *7) Make_Playlist.py*
 
 This file is used to create the playlist of the music which is in **Main.py**.
-
-
-# How to use the player
-This is the *CLI* base programme, so you have to run **Main.py** file in the cmd.This is work on only windows.
-Open the Music file and read the instruction.txt then put all the music files in it.
-Run the Main.py and enjoy your music.
