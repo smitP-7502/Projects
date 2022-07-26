@@ -3,7 +3,7 @@ This is CLI based Offline Music Palyer Devloped in PYthon.
 
 # How to run it
 First you have to clone or Download the this repo and then simply put all your offline songs in the **Music** Folder which is attach with this repo.
-Before running this programme your system must have python interpeter installed in it[Donwload From Here](https://www.python.org/downloads/).
+Before running this programme your system must have python interpeter installed in it. [Donwload From Here](https://www.python.org/downloads/)
 Then open CMD and write ***pip install pygame*** (You can also install mannualy). 
 After Installation You have to run(click) **Main.py** file and Enjoy your songs.
 
